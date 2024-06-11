@@ -13,6 +13,7 @@ export const transporter = createTransport({
         type: 'OAuth2',
         user: process.env.SUPER_USER,
         clientId: process.env.CLIENT_ID as string,
-        clientSecret: process.env.CLIENT_SECRET as string
+        clientSecret: process.env.CLIENT_SECRET as string,
+        refreshToken: process.env.REFRESH_TOKEN as string,
     }
 });
