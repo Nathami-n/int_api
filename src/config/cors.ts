@@ -1,4 +1,4 @@
 export const corsOptions = {
-    origin: ["http://localhost:"],
+    origin: ["*"],
     credentials: true
 };
