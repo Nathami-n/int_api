@@ -9,6 +9,7 @@ const server = createServer(app);
 import {corsOptions} from './config/cors';
 import {PORT} from './config/connection';
 import { authRouter } from "./routes/auth";
+import { requestLogger } from "./middleware/reqLogger";
 
 
 //middleware
@@ -16,6 +17,8 @@ app.use(express.json());
 app.use(cors(corsOptions));
 app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
+app.use(requestLogger);
+
 
 //routes
 
