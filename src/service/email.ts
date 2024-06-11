@@ -14,4 +14,12 @@ export const sendEmail = async ( token: string, email: string) => {
 };
 
 
-export cosnt 
+export const sendResetEmail = async (email: string, token: string ) => {
+    const emailOptions = {
+        from: process.env.SUPER_USER,
+        to: email,
+        subject: "verification of email",
+        text:`http://localhost:3000/api/v1/reset/${token}`
+    };
+    await transporter.sendMail(emailOptions);
+}
