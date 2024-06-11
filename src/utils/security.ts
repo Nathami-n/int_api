@@ -3,9 +3,7 @@ import jwt from "jsonwebtoken";
 import { v4 as uuid } from "uuid";
 import dotenv from "dotenv";
 
-dotenv.config({
-  path: "./env",
-});
+dotenv.config();
 
 export const verifyPassword = async (pass: string, hash: string) => {
   return bcrypt.compare(pass, hash);

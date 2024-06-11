@@ -6,7 +6,7 @@ const createNewUserQuery = "INSERT INTO Users (name, email, password, role) VALU
 const getUserByEmail = async (email: string) => {
     const user = await pool.query(getUserByEmailQuery, [email]);
     if(user.rows.length == 0) return null;
-    return user.rows;
+    return user.rows[0];
 };
 
 const createNewUser = async (arr: [name:string , email: string, password: string, role: string]) => {
