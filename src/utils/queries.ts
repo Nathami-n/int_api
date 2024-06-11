@@ -1,6 +1,6 @@
 import {pool} from '../config/db';
 const getUserByEmailQuery = "SELECT * FROM Users WHERE email  = $1";
-const createNewUserQuery = "INSERt INTO Users (name, email, password, role) VALUES ($1, $2, $3, $4) RETURNING * ";
+const createNewUserQuery = "INSERT INTO Users (name, email, password, role) VALUES ($1, $2, $3, $4) RETURNING * ";
 
 
 const getUserByEmail = async (email: string) => {
