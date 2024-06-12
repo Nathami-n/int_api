@@ -55,6 +55,7 @@ export const verifyJWT = (req: CustomRequest, res: Response, next: NextFunction 
         }; 
         req.user_id = decoded.user_id;
         req.user_email = decoded.user_email;
+        next();
      });
 
 }
