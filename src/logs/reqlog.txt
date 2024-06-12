@@ -32,3 +32,12 @@ a8e09531-99e4-427e-aa9c-70bcdf99d794	 20240612	 18:09:36	 GET	 /jwtdemo	 undefin
 13cc14b7-3932-4614-96b1-dba00ccb2f86	 20240612	 18:16:04	 GET	 /jwtdemo	 undefined
 7c3e171e-581a-4e18-a357-37c02abe2d52	 20240612	 18:48:32	 GET	 /token/refresh	 undefined
 0fc05998-f271-40d3-b97b-fea83deb3ed9	 20240612	 18:48:48	 POST	 /token/refresh	 undefined
+d51e541f-da76-403f-8c00-5240f2d55f1b	 20240612	 19:19:27	 POST	 /jwtdemo	 undefined
+856fa110-8e39-4b74-ad48-f298d682df56	 20240612	 19:21:09	 POST	 /token/refresh	 undefined
+b8944e0e-09f2-4d0f-971c-a94af221a328	 20240612	 19:21:31	 POST	 /jwtdemo	 undefined
+89b128e9-deda-437c-89d9-eddc090b8670	 20240612	 19:21:39	 POST	 /jwtdemo	 undefined
+696e9a35-982f-4492-ab4d-e0f98b374a3e	 20240612	 19:28:57	 POST	 /jwtdemo	 undefined
+e284acbf-7439-4611-bb48-b63b31f5565e	 20240612	 21:57:58	 POST	 /api/v1/forgotpassword	 undefined
+24cf2232-5987-4e66-9bf4-2bd0694829fa	 20240612	 21:58:17	 POST	 /api/v1/forgotpassword	 undefined
+8aa29091-c644-4ee1-babc-e63475c296f0	 20240612	 22:00:26	 POST	 /api/v1/reset/879a59df3de9369e4248/georgenathan010@gmail.com	 undefined
+6931ee14-9a95-4626-8d00-a7c16865e976	 20240612	 22:00:34	 POST	 /api/v1/reset/879a59df3de9369e4248/georgenathan010@gmail.com	 undefined

@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 import { queries } from "../utils/queries";
+import {key} from '../temp/pass.config';
 import { createJWT, hashPassword, verifyPassword } from "../utils/security";
 import { sendEmail } from "../service/email";
 
@@ -105,6 +106,42 @@ const verifyToken = async (req: Request, res: Response) => {
     } catch (e: any) {
         console.error(e);
     }
+};
+
+const resetUserPassword = async (req: Request, res: Response) => {
+  const reset_code = req.params.token;
+  const email = req.params.email;
+  const newPassword = req.body.password;
+
+  const hashed_password = hashPassword(newPassword);
+
+  //check for the code validity
+  if(reset_code !== key.pass) {
+    return res.json({
+      success: false,
+      message: "Invalid reset key"
+    });
+  };
+
+  //get user 
+  try {
+    const user = queries.updateUser([hashed_password, email]);
+
+     return res.status(200).json({
+      success: true,
+      user: user,
+    });
+
+  } catch (e: any ) {
+    console.error(e);
+    return res.json({
+      success: false,
+      error: e.message
+    })
+  }
+
+
+
 }
 
-export { registerUser, loginUser, verifyToken };
+export { registerUser, loginUser, verifyToken, resetUserPassword };
