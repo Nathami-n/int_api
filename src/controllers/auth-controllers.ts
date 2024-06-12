@@ -116,7 +116,7 @@ const resetUserPassword = async (req: Request, res: Response) => {
   const hashed_password = hashPassword(newPassword);
 
   //check for the code validity
-  if(reset_code !== key.pass) {
+  if(reset_code !== process.env.RESET_KEY) {
     return res.json({
       success: false,
       message: "Invalid reset key"

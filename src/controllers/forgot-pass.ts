@@ -2,12 +2,15 @@ import type {Request, Response} from 'express';
 import { sendResetEmail } from '../service/email';
 import { key } from '../temp/pass.config';
 import crypto from 'crypto';
+import dotenv from 'dotenv';
+dotenv.config();
 
 export const handleForgotPassword = async (req: Request, res: Response) => {
     const {email} = req.body;
-    const cryptoToken = crypto.randomBytes(10).toString('hex');
-    //update the dummy store
-    key.update(cryptoToken);
+    // const cryptoToken = crypto.randomBytes(10).toString('hex');
+    // //update the dummy store
+    // key.update(cryptoToken);
+
     if(!email) {
         res.status(404).json({
             message: "Please provide your email"
@@ -15,7 +18,7 @@ export const handleForgotPassword = async (req: Request, res: Response) => {
     };
 
     try {
-        await sendResetEmail(email,key.pass);
+        await sendResetEmail(email, process.env.RESET_KEY);
         return res.json({
             success: true,
             message: "proceed to change password"

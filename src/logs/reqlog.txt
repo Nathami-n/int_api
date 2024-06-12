@@ -41,3 +41,5 @@ e284acbf-7439-4611-bb48-b63b31f5565e	 20240612	 21:57:58	 POST	 /api/v1/forgotpa
 24cf2232-5987-4e66-9bf4-2bd0694829fa	 20240612	 21:58:17	 POST	 /api/v1/forgotpassword	 undefined
 8aa29091-c644-4ee1-babc-e63475c296f0	 20240612	 22:00:26	 POST	 /api/v1/reset/879a59df3de9369e4248/georgenathan010@gmail.com	 undefined
 6931ee14-9a95-4626-8d00-a7c16865e976	 20240612	 22:00:34	 POST	 /api/v1/reset/879a59df3de9369e4248/georgenathan010@gmail.com	 undefined
+acaf22b3-3272-4997-b1dc-0a27f05e9b2b	 20240612	 22:08:37	 POST	 /api/v1/reset/879a59df3de9369e4248/georgenathan010@gmail.com	 undefined
+abfa856d-b3f5-44eb-a954-e0415e05ca73	 20240612	 22:13:39	 POST	 /api/v1/reset/kdgihgoihdgo/georgenathan010@gmail.com	 undefined
