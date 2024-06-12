@@ -30,3 +30,5 @@ b5dc4001-968d-45b8-b5f7-bef4a80c1667	 20240612	 17:35:32	 GET	 /jwtdemo	 undefin
 be61ad32-51d3-4c41-b1dc-7257bff3551e	 20240612	 17:35:37	 GET	 /jwtdemo	 undefined
 a8e09531-99e4-427e-aa9c-70bcdf99d794	 20240612	 18:09:36	 GET	 /jwtdemo	 undefined
 13cc14b7-3932-4614-96b1-dba00ccb2f86	 20240612	 18:16:04	 GET	 /jwtdemo	 undefined
+7c3e171e-581a-4e18-a357-37c02abe2d52	 20240612	 18:48:32	 GET	 /token/refresh	 undefined
+0fc05998-f271-40d3-b97b-fea83deb3ed9	 20240612	 18:48:48	 POST	 /token/refresh	 undefined
