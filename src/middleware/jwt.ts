@@ -1,17 +1,20 @@
 import { Response, Request, NextFunction } from "express";
-import jwt from 'jsonwebtoken';
+import jwt, { JwtPayload } from 'jsonwebtoken';
 
 interface CustomRequest extends Request {
-    user_id: string,
-    user_email: string,
+    user_id?: string | JwtPayload,
+    user_email?: string |JwtPayload,
     cookies: {
         jwt: string;
     }
 };
 
 export const verifyJWT = (req: CustomRequest, res: Response, next: NextFunction ) => {
-    const token = req.headers.authorization;
-    console.log(token);
+    const reqheaders = req.headers.authorization as string || req.headers["Authorization"] as string || req.headers['authorization'] as string;
+    console.log(reqheaders);
+
+    const token = reqheaders.split(' ')[1];
+
     if(!token) {
         return res.status(404).json({
             success: false,
@@ -22,7 +25,7 @@ export const verifyJWT = (req: CustomRequest, res: Response, next: NextFunction 
         })
     };
     //decode the token
-     jwt.verify(token, process.env.ACCESS_TOKEN as string, (err, decoded)=> {
+     jwt.verify(token, process.env.ACCESS_TOKEN as string, (err, decoded: {user_id: string, user_email: string})=> {
         if (err) {
             if (err instanceof jwt.TokenExpiredError){
                 return res.status(401).json({
@@ -50,5 +53,8 @@ export const verifyJWT = (req: CustomRequest, res: Response, next: NextFunction 
                 },
             });
         }; 
+        req.user_id = decoded.user_id;
+        req.user_email = decoded.user_email;
      });
+
 }

@@ -1,5 +1,5 @@
 import {createServer} from "node:http";
-import express from 'express';
+import express, { Request, Response } from 'express';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 
@@ -10,7 +10,7 @@ import {corsOptions} from './config/cors';
 import {PORT} from './config/connection';
 import { authRouter } from "./routes/auth";
 import { requestLogger } from "./middleware/reqLogger";
-
+import {verifyJWT} from './middleware/jwt';
 
 //middleware
 app.use(express.json());
@@ -23,12 +23,14 @@ app.use(requestLogger);
 //routes
 
 app.use('/api/v1', authRouter);
+app.use('/jwtdemo',verifyJWT, (req: Request, res: Response)=> {
+     return res.json({message: "will show if token has not expired"});
+});
 
 
-function main () {
+(function main () {
     server.listen(PORT, () => {
         console.log(`listening on ${PORT}`);
     });
-};
+})();
 
-main();
