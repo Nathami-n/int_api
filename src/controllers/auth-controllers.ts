@@ -99,10 +99,9 @@ const loginUser = async (req: Request, res: Response) => {
 const verifyToken = async (req: Request, res: Response) => {
     const token = req.params.token;
     try {
-        if(token != process.env.VERIFICATION_TOKEN as string) return res.json({success: false, data: {body: null, error: "invalid token"}}).redirect("http://localhost/api/v1/register");
+        if(token != process.env.VERIFICATION_TOKEN as string) return res.json({success: false, data: {error: "Invalid token"}});
 
-        return res.json({success: true, data: {body: null, error: null}}).redirect('http://localhost/api/v1/login');
-
+        return res.json({success: true, data: {link: 'http://localhost:3000/api/v1/login'}});
     } catch (e: any) {
         console.error(e);
     }
