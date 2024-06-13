@@ -4,6 +4,7 @@ import jwt, { JwtPayload } from 'jsonwebtoken';
  export interface CustomRequest extends Request {
     user_id?: string | JwtPayload,
     user_email?: string |JwtPayload,
+    user_role?: string,
     cookies: {
         jwt: string;
     }
