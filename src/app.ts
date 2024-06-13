@@ -3,7 +3,7 @@ import express, { Request, Response } from 'express';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 
-const app = express();
+export const app = express();
 const server = createServer(app);
 
 import {corsOptions} from './config/cors';

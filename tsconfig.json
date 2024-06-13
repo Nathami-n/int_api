@@ -9,6 +9,6 @@
         "baseUrl": "src",
         "esModuleInterop": true
     },
-    "include": ["src/**/*"],
+    "include": ["src/**/*.ts", "src/__tests__/**/*.ts"],
     "exclude": ["node_modules", "**/*.spec.ts"]
 }
