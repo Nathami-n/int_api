@@ -1,7 +1,7 @@
 import { NextFunction, Response} from "express";
 import {CustomRequest} from '../middleware/jwt';
 
-export const setUser = (res: Response, req: CustomRequest, next: NextFunction) => {
+export const setUser = ( req: CustomRequest, res: Response, next: NextFunction) => {
     const {role} = req.body;
     //set the request object
 

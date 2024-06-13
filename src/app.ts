@@ -13,7 +13,8 @@ import { requestLogger } from "./middleware/reqLogger";
 import {verifyJWT} from './middleware/jwt';
 import {refreshRouter} from './routes/refresh';
 import { roleAuthenticator } from "./middleware/role";
-import {protectedRouter} from './routes/protected.route';
+import {protectedRoute} from './routes/protected.route';
+
 
 //middleware
 app.use(express.json());
@@ -32,7 +33,7 @@ app.use('/token', refreshRouter);
 app.use('/jwtdemo',verifyJWT, roleAuthenticator ,(req: Request, res: Response)=> {
      return res.json({message: "will show if token has not expired and user is admin"});
 });
-app.use("/admin", protectedRouter);
+app.use("/admin", protectedRoute);
 
 
 (function main () {
